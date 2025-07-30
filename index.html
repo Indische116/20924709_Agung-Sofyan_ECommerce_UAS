@@ -1,0 +1,315 @@
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indische Shop</title>
+  <!--Bagaimana bentuk tampilan/ CSS-->
+  <style>
+    body {
+      font-family:Cambria, LucidaHandrawing, Arial, sans-serif;
+      background-color: #090909;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #090909;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+      margin: 0.5rem 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fbfbf9;
+      font-weight: bold;
+    }
+
+    .cart-icon {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    main {
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background-color: #fbfbf9;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(83, 81, 81, 0.1);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background: #fbfbf9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(83, 81, 81, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .product img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-content {
+      text-align: center;
+    }
+
+    .product .price {
+      font-weight: bold;
+      color: #15d325;
+      margin: 10px 0;
+    }
+
+    footer {
+      background-color: #090909;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      background-color: #0ace07;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      margin-top: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #0ace07;
+    }
+
+     /* RESPONSIF DI BERBAGAI MEDIA */
+  @media (min-width: 320px) { .products { grid-template-columns: 1fr; } }
+  @media (min-width: 768px) { .products {  grid-template-columns: repeat(2, 1fr);   } }
+  @media (min-width: 1200px) { .products {  grid-template-columns: repeat(3, 1fr);  } }
+  </style>
+</head>
+<body>
+<!--Tentang bagian atas/ header-->
+  <header>
+    <h1>Indische Shirt</h1>
+    <nav>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#keranjang">Keranjang</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+<!--Tentang beranda-->
+    <section id="beranda">
+      <h2>Selamat Datang Di Toko Online Kami</h2>
+      <p>Toko Online Pakaian Khusus Pria Untuk Kamu Yang Berani Tampil Keren</p>
+    </section>
+<!--Menjelaskan tentang toko-->
+<section class="about">
+    <h2>Tentang Toko Kami</h2>
+    <p>Indische Shirt adalah toko yang menyediakan pakaian khusus untuk pria agar dapat keren dan stylish.</p>
+    <p>Semua produk di toko kami menggunakan bahan premium, berkualitas, nyaman dan tebal.</p>
+    <p>Kamu bisa tetap tampil kece, keren, dan stylish diberbagai kesempatan karena kami menyediakan pakaian untuk acara formal maupun santai.</p>
+  </section>
+<!--Tentang produk-->
+    <section id="produk">
+      <h2>Produk Unggulan</h2>
+      <div class="product-list">
+        <!--Gambar, Nama, Harga, Tombo beli dan Deskripsi Produk 1-->
+        <article class="product">
+          <img src="c:\Users\HP\Downloads\Jaket Kulit.jpeg" alt="Jaket Kulit">
+          <h3>Jaket Kulit</h3>
+          <p>Jaket kulit yang dibuat dengan bahan yang tebal, nyaman, berkualitas, dan desain trendy.</p>
+          <p class="price">💸Rp200.000</p>
+          <button class="btn"
+            onclick="buyNow('Jaket Kulit', 200000, 'c:\Users\HP\Downloads\Jaket Kulit.jpeg')">
+            Beli
+          </button>
+          <button class="btn"
+              onclick="addToCart('Jaket Kulit', 200000, 'c:\Users\HP\Downloads\Jaket Kulit.jpeg')">
+              🛒
+            </button>
+        </article>
+        <!--Gambar, Nama, Harga, Tombo beli dan Deskripsi Produk 2-->
+        <article class="product">
+          <img src="c:\Users\HP\Downloads\Hoodie.jpg" alt="Hoodie">
+          <h3>Hoodie</h3>
+          <p>Hoodie dengan bahan tebal, nyaman, lembut, tidak mudah berbulu, dan stylish.</p>
+          <p class="price">💸Rp135.000</p>
+          <button class="btn"
+            onclick="buyNow('Hoodie', 135000, 'c:\Users\HP\Downloads\Hoodie.jpg')">
+            Beli
+          </button>
+          <button class="btn"
+              onclick="addToCart('Hoodie', 135000, 'c:\Users\HP\Downloads\Hoodie.jpg')">
+              🛒
+            </button>
+        </article>
+        <!--Gambar, Nama, Harga, Tombo beli dan Deskripsi Produk 3-->
+        <article class="product">
+          <img src="c:\Users\HP\Downloads\Kaos Polos.jpeg" alt="Kaos Polos">
+          <h3>Kaos Polos</h3>
+          <p>Kaos Polos dengan bahan sejuk, tidak panas, tidak mudah luntur, lembut dan cocok untuk aktivitas sehari-hari.</p>
+          <p class="price">💸Rp47.000</p>
+          <button class="btn"
+          onclick="buyNow('Kaos Polos', 47000, 'c:\Users\HP\Downloads\Kaos Polos.jpeg')">
+          Beli
+        </button>
+        <button class="btn"
+              onclick="addToCart('Kaos Polos', 47000, 'c:\Users\HP\Downloads\Kaos Polos.jpeg')">
+              🛒
+            </button>
+        </article>
+        <!--Gambar, Nama, Harga, Tombo beli dan Deskripsi Produk 4-->
+        <article class="product">
+          <img src="c:\Users\HP\Downloads\Kemeja Pendek.jpg" alt="Kemeja Lengan Pendek">
+          <h3>Kemeja Pendek</h3>
+          <p>Kemeja dengan bahan yang tidak mudah kusut dengan tampilan lengan pendek yang membuat kesan formal tetapi tetap santai.</p>
+          <p class="price">💸Rp75.000</p>
+          <button class="btn"
+          onclick="buyNow('Kemeja Lengan Pendek', 75000, 'c:\Users\HP\Downloads\Kemeja Pendek.jpg')">
+          Beli
+        </button>
+        <button class="btn"
+              onclick="addToCart('Kemeja Lengan Pendek', 75000, 'c:\Users\HP\Downloads\Kemeja Pendek.jpg')">
+              🛒
+            </button>
+          </article>
+          <!--Gambar, Nama, Harga, Tombo beli dan Deskripsi Produk 5-->
+        <article class="product">
+          <img src="c:\Users\HP\Downloads\Kemeja Lengan Panjang.jpeg" alt="Kemeja Lengan Panjang">
+          <h3>Kemeja Panjang</h3>
+          <p>Kemeja dengan bahan yang tidak mudah kusut dengan tampilan lengan panjang agar terlihat lebih formal dan gagah.</p>
+          <p class="price">💸Rp100.000</p>
+          <button class="btn"
+          onclick="buyNow('Kemeja Lengan Panjang', 100000, 'c:\Users\HP\Downloads\Kemeja Lengan Panjang.jpeg')">
+          Beli
+          </button>
+          <button class="btn"
+              onclick="addToCart('Kemeja Lengan Panjang', 100000, 'c:\Users\HP\Downloads\Kemeja Lengan Panjang.jpeg')">
+              🛒
+            </button>
+          </article>
+      </div>
+    </section>
+<!--Tentang keranjang-->
+    <section id="keranjang">
+      <h2>Keranjang 🛒</h2>
+      <p>Belum ada produk yang dipilih</p>
+    </section>
+<!--Informasi kontak yang bisa dihubungi-->
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <p>Email:indischeshirt@gmail.com</p>
+      <p>WhatsApp:0895411835285</p>
+      <p>Instagram:indische.inc</p>
+      <p>Jl.Dago Atas N0.69</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy;IndischeShirt.</p>
+  </footer>
+
+  <!--Untuk JavaScript-->
+  <script>
+    const cart = [];
+
+    function addToCart(name, price, img) {
+      cart.push({ name, price, img });
+      renderCart();
+      document.getElementById('keranjang').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function buyNow(name, price, img) {
+    alert('Kamu sudah membeli produk');
+  }
+
+    function renderCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const cartTotalP = document.getElementById('cart-total');
+      cartItemsDiv.innerHTML = '';
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p>Belum ada produk yang dipilih</p>';
+        cartTotalP.textContent = 'Total: Rp0';
+        return;
+      }
+
+      let total = 0;
+      const ul = document.createElement('ul');
+
+      cart.forEach((item, idx) => {
+        total += item.price;
+
+        const li = document.createElement('li');
+        const imgEl = document.createElement('img');
+        imgEl.src = item.img;
+        imgEl.alt = item.name;
+
+        const info = document.createElement('div');
+        info.innerHTML = `<strong>${item.name}</strong><br>Rp${item.price.toLocaleString()}`;
+        info.style.marginRight = '1rem';
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Hapus';
+        btn.onclick = () => {
+          cart.splice(idx, 1);
+          renderCart();
+        };
+
+        const buyButton = document.createElement('button');
+        buyButton.textContent = 'Beli';
+        buyButton.onclick = ()  => {
+          alert('Kamu sudah membeli produk');
+          cart.splice(idx, 1);
+          renderCart();
+        };
+
+        li.append(imgEl, info, btn, buyButton);
+        ul.appendChild(li);
+      });
+
+      cartItemsDiv.appendChild(ul);
+      cartTotalP.textContent = 'Total: Rp' + total.toLocaleString();
+    }
+  </script>
+</body>
+</html>
